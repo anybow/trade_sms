@@ -1,13 +1,11 @@
 # -*- coding: utf-8 -*-
-'''#行业短信测试及结果收集
-'''
+"""#行业短信测试及结果收集
+"""
 import os
 import urllib.parse, urllib.request, http.cookiejar
 
 """cookie"""
-cookiefile = os.getcwd()+"\cookie.txt"
 cookie=http.cookiejar.LWPCookieJar()
-if os.path.exists(cookiefile): cookie.load(cookiefile,True,True)
 chandle=urllib.request.HTTPCookieProcessor(cookie)
 """获取数据"""
 def getData(url):
