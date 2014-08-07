@@ -16,7 +16,6 @@ def getData(url):
     r.add_header('Accept-Charset', 'ISO-8859-1,utf-8;q=0.7,*;q=0.7')	
     opener=urllib.request.build_opener(chandle)
     u=opener.open(r)
-    chandle.cookiejar.save(cookiefile,True,True)
     data=u.read()
     try:
         data=data.decode('utf-8')
@@ -28,7 +27,6 @@ def postData(url,data):
     r=urllib.request.Request(url,data)
     opener=urllib.request.build_opener(chandle)
     u=opener.open(r)
-    chandle.cookiejar.save(cookiefile,True,True)
     data=u.read()
     try:
         data=data.decode('utf-8')
